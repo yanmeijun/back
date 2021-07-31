@@ -1,0 +1,11 @@
+{
+  "access_token": "d3c96c18-bdcc-45bc-afde-915d7b291857",
+  "token_type": "bearer",
+  "refresh_token": "bc54249d-69b5-43c6-9359-caf759ff289d",
+  "expires_in": 20267,
+  "scope": "server",
+  "license": "made by ucap",
+  "dept_id": 1,
+  "user_id": 1,
+  "username": "admin"
+}

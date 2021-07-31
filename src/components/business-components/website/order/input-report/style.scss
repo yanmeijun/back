@@ -1,0 +1,17 @@
+.tabs-wrap {
+  &.center {
+    display: flex;
+    justify-content: center;
+    .el-tabs--ex-theme2 {
+      display: inline-block;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+  }
+}
+
+.section {
+  margin-top: 12px;
+  padding: 20px;
+  background-color: #fff;
+}

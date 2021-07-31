@@ -1,0 +1,480 @@
+// 全局变量
+@import './variables.scss';
+@import 'vxe-table/styles/variable.scss';
+// ele样式覆盖
+@import './element-ui.scss';
+// 顶部右侧显示
+@import './top.scss';
+// 导航标签
+@import './tags.scss';
+// 工具类函数
+@import './mixin.scss';
+// 侧面导航栏
+@import './sidebar.scss';
+// 动画
+@import './animate/vue-transition.scss';
+//适配
+@import './media.scss';
+//阿里fontIcon配置
+@import './font/font.scss';
+//通用配置
+@import './normalize.scss';
+$vxe-table-row-height-default: 40px;
+$vxe-loading-background-color: rgba(255, 255, 255, 0.6);
+.vxe-table--tooltip-wrapper {
+  z-index: 9999 !important;
+}
+@import 'vxe-table/styles/modules.scss';
+a {
+  text-decoration: none;
+  color: $mainBlack65;
+}
+
+* {
+  outline: none;
+}
+
+ul,
+p,
+h1,
+h2,
+h3,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $mainBlack65;
+  font-size: 14px;
+}
+select {
+  -webkit-user-select: text;
+}
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+textarea {
+  resize: none !important;
+}
+
+// 关于 图标 CSS 的设置
+[class^='icon-'] {
+  font-family: 'iconfont' !important;
+  /* 以下内容参照第三方图标库本身的规则 */
+  font-size: 18px !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.avue-input-icon__item i,
+.avue-crud__icon--small {
+  font-family: 'iconfont' !important;
+  /* 以下内容参照第三方图标库本身的规则 */
+  font-size: 24px !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.el-menu-item [class^='icon-'] {
+  margin-right: 10px;
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.el-submenu [class^='icon-'] {
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.el-menu-item [class^='iconfont'] {
+  margin-right: 10px;
+  width: 24px;
+  text-align: center;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.el-submenu [class^='iconfont'] {
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.avue-crud .el-table th {
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.avue-crud .el-table td {
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.table-no-menu {
+  position: relative;
+  .avue-crud__menu {
+    display: none;
+  }
+  @media screen and (max-width: 992px) {
+    .avue-crud__menu {
+      display: none !important;
+    }
+  }
+}
+.avue-crud__empty {
+  padding: 70px 0;
+  .avue-empty {
+    .avue-empty__image {
+      background: url(../assets/img/empty.png) no-repeat;
+      background-size: 100% 100%;
+      width: 92px;
+      height: 84px !important;
+      margin: 0 auto;
+    }
+    img {
+      display: none;
+    }
+    p {
+      font-size: 14px;
+      line-height: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.kp-tabs {
+  padding: 20px 20px 0;
+  background-color: #fff;
+  &.max {
+    padding: 0;
+  }
+  .el-tabs__header {
+    margin-bottom: 0;
+  }
+  .el-tabs__item {
+    span {
+      padding-right: 7px;
+    }
+  }
+  .el-tabs__nav-wrap::after {
+    background-color: #e8e8e8;
+    height: 1px;
+  }
+}
+.kp-select-multiple {
+  .el-select__tags > span {
+    display: flex;
+    overflow: hidden;
+  }
+}
+
+.kp-block-title {
+  margin-bottom: 12px;
+  .name {
+    line-height: 32px;
+    font-weight: 600;
+    color: $mainBlack85;
+    opacity: 0.85;
+    &::before {
+      content: '';
+      margin-right: 8px;
+      width: 4px;
+      height: 14px;
+      border-radius: 0 2px 2px 0;
+      background: var(--primary);
+    }
+  }
+}
+.kp-dialog-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: $mainBlack85;
+  background: rgba(0, 0, 0, 0.04);
+}
+.kp-button {
+  padding: 8px 15px !important;
+}
+.kp-disabled {
+  padding: 9px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 14px;
+  background-color: rgba(0, 0, 0, 0.06);
+  color: $mainBlack65;
+}
+
+.kp-min-select {
+  width: 90px !important;
+}
+.kp-opacity {
+  opacity: 0.5;
+}
+.icons {
+  i {
+    cursor: pointer;
+    margin: 0 8px;
+    &:hover {
+      color: var(--primary);
+    }
+    // 状态-禁用
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.45;
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.icon-font-bg {
+  background: var(--primary);
+}
+.kp-hover {
+  cursor: pointer;
+  &:hover {
+    color: var(--primary);
+  }
+}
+.kp-hover-line {
+  cursor: pointer;
+  &:hover {
+    color: var(--primary);
+    border-bottom: 1px solid var(--primary);
+  }
+}
+
+.kp-date-picker {
+  width: 100% !important;
+}
+.kp-text-left {
+  text-align: left;
+}
+.kp-text-right {
+  text-align: right;
+}
+.kp-text-center {
+  text-align: center;
+}
+.flex {
+  display: flex;
+  &.flex-wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &.center {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.justify-end {
+    justify-content: flex-end;
+  }
+  &.justify-between {
+    justify-content: space-between;
+  }
+  &.align-center {
+    align-items: center;
+  }
+}
+.word-ellipsis-2 {
+  overflow: hidden; //将超出的部分隐藏
+  text-overflow: ellipsis; //超出部分用省略号显示
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.word-ellipsis-1 {
+  overflow: hidden; //将超出的部分隐藏
+  text-overflow: ellipsis; //超出部分用省略号显示
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  word-break: keep-all;
+  display: block;
+}
+
+.no-rules-form {
+  .el-col {
+    margin-bottom: 0;
+  }
+  .el-form-item--small.el-form-item {
+    margin-bottom: 8px;
+  }
+  .padding-none.el-form-item {
+    padding: 0;
+    .el-form-item__content {
+      margin: 0 !important;
+    }
+  }
+}
+
+.no-rules-form2 {
+  .el-col {
+    margin-bottom: 0;
+  }
+  .el-form-item--small.el-form-item {
+    margin-bottom: 8px;
+  }
+  .padding-none.el-form-item {
+    padding: 0;
+    .el-form-item__content {
+      margin: 0 !important;
+    }
+  }
+}
+
+.question-container {
+  position: relative;
+  .question-icon {
+    // position: absolute;
+    // right: -16px;
+    // top: 1px;
+    font-size: 14px;
+    color: $mainBlack45;
+  }
+}
+
+.el-table-column--selection {
+  .cell {
+    padding: 0;
+  }
+}
+
+.kp-color-main {
+  color: var(--primary) !important;
+}
+.kp-color-error {
+  color: $mainDanger !important;
+}
+.kp-color-success {
+  color: $mainSuccess !important;
+}
+
+::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(245, 245, 245, 0);
+}
+:hover {
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(245, 245, 245, 0);
+  }
+
+  /*定义滑块，内阴影及圆角*/
+  &::-webkit-scrollbar-thumb {
+    /*width: 10px;*/
+    height: 20px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+  }
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/*定义滑块，内阴影及圆角*/
+::-webkit-scrollbar-thumb {
+  /*width: 10px;*/
+  height: 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+/*增加|移除*/
+.kp-add-remove {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 24px;
+  width: 24px;
+  line-height: 22px;
+  text-align: center;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+  &:hover {
+    opacity: 1;
+  }
+  & + .kp-add-remove {
+    margin-left: 8px;
+  }
+  // 主题-危险
+  &--danger {
+    background: $mainDanger;
+    border-color: $mainDanger;
+  }
+
+  // 超大号
+  &--xlarge {
+    height: 32px;
+    width: 32px;
+    line-height: 30px;
+    font-size: 18px;
+  }
+  // 大号
+  &--large {
+    height: 28px;
+    width: 28px;
+    line-height: 26px;
+    font-size: 16px;
+  }
+  // 小号
+  &--small {
+    height: 20px;
+    width: 20px;
+    line-height: 18px;
+    font-size: 12px;
+  }
+  // 迷你
+  &--mini {
+    height: 16px;
+    width: 16px;
+    line-height: 14px;
+    i {
+      transform: scale(0.65);
+    }
+  }
+  // 朴素
+  &--plain {
+    background-color: transparent;
+    color: var(--primary);
+    &.kp-add-remove--danger {
+      color: $mainDanger;
+    }
+  }
+  // 圆形
+  &--circle {
+    border-radius: 50%;
+  }
+}
